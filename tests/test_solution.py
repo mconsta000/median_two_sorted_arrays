@@ -16,8 +16,8 @@ class SolutionTestCase(unittest.TestCase):
     def test_split2(self):
         self.assertEqual(self.solution.split([1,2,3,4]), [[1,2],[3,4]])
 
-    def test_split2(self):
-        self.assertEqual(self.solution.split([1]), [[],[1]])
+    def test_split3(self):
+        self.assertEqual(self.solution.split([1]), [[1],[]])
 
     def test_merge1(self):
         self.assertEqual(self.solution.merge([1], []), [1])
@@ -45,6 +45,15 @@ class SolutionTestCase(unittest.TestCase):
 
     def test_merge8(self):
         self.assertEqual(self.solution.merge([1,4], [2,3]), [1,2,3,4])
+
+    def test_merge9(self):
+        self.assertEqual(self.solution.merge([2], [1,3,4,5]), [1,2,3,4,5])
+
+    def test_merge10(self):
+        self.assertEqual(self.solution.merge([1,2,3,5], [4]), [1,2,3,4,5])
+
+    def test_merge11(self):
+        self.assertEqual(self.solution.merge([1,2,3,6], [4,5]), [1,2,3,4,5,6])
 
     def test_median1(self):
         a = [1,3]
@@ -75,7 +84,7 @@ class SolutionTestCase(unittest.TestCase):
         a = []
         b = []
 
-        while i < 10000:
+        while i < 1000000:
             if (i % 2 == 0):
                 a.append(i)
             else:

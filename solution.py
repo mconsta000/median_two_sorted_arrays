@@ -1,5 +1,3 @@
-import math
-
 class Solution:
     def findMedianSortedArrays(self, nums1: [int], nums2: [int]) -> float:
         nums = self.merge(nums1, nums2)
@@ -30,4 +28,7 @@ class Solution:
     def split(self, nums: [int]) -> [[int]]:
         mid_point = len(nums) // 2
 
-        return [nums[:mid_point], nums[mid_point:]]
+        if mid_point == 0:
+            return [nums, []]
+        else:
+            return [nums[:mid_point], nums[mid_point:]]
